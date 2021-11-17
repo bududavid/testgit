@@ -1,0 +1,61 @@
+.burger{
+	z-index: 4;
+	margin-right: 5px;
+	position: relative;
+	width: 20px;
+	height: 20px;
+	span{
+	content: '';
+	background: #000000;
+	position: absolute;
+	width: 15px;
+	height: 2px;
+	top: 9px;
+	transition: .3s ease-in-out;
+	left: 5px;
+	border-radius: 6px;
+	}
+}
+.burger::before{
+	content: '';
+	background: #000000;
+	position: absolute;
+	width: 20px;
+	height: 2px;
+	left: 0;
+	top: 0;
+	transition: .4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+	border-radius: 6px;
+}
+.burger::after{
+	content: '';
+	background: #000000;
+	position: absolute;
+	width: 13px;
+	height: 2px;
+	left: 0;
+	bottom: 0;
+	transition: .4s ease-in-out;
+	left: 7px;
+	border-radius: 6px;
+}
+.active{
+	span{
+		transform: scale(0);
+		transition: .3s ease-in-out;
+	}
+	&::before{
+		transform: rotate(-45deg);
+		top: 9px;
+		width: 25px;
+		transition: .4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+		left: 0;
+	}
+	&::after{
+		transform: rotate(45deg);
+		bottom: 9px;
+		width: 25px;
+		transition: .4s ease-in-out;
+		left: 0;
+	}
+}
